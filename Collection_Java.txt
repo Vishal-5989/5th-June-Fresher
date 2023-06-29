@@ -1,0 +1,27 @@
+..................................................Collection Framework...........................
+#Java code snippet that uses a HashMap to find the count of characters in a given string:
+
+
+public static void main(String[] args) {
+        String input = "Hello, World!";
+        HashMap<Character, Integer> characterCount = new HashMap<>();
+
+        // Iterate over each character in the input string
+        for (char c : input.toCharArray()) {
+            // Check if the character is already present in the map
+            if (characterCount.containsKey(c)) {
+                // If present, increment its count by 1
+                characterCount.put(c, characterCount.get(c) + 1);
+            } else {
+                // If not present, add it to the map with a count of 1
+                characterCount.put(c, 1);
+            }
+        }
+
+        // Print the character count
+        for (char c : characterCount.keySet()) {
+            int count = characterCount.get(c);
+            System.out.println("Character '" + c + "' occurs " + count + " times.");
+        }
+    }
+}

@@ -1,0 +1,56 @@
+public class StringOperations {
+    public static void main(String[] args) {
+        String originalString = "Hello, World!";
+        
+        // Reverse the string
+        String reversedString = reverseString(originalString);
+        System.out.println("Reversed String: " + reversedString);
+        
+        // Count the number of characters in the string
+        int characterCount = countCharacters(originalString);
+        System.out.println("Character Count: " + characterCount);
+        
+        // Using StringBuilder to append strings
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Hello");
+        stringBuilder.append(", ");
+        stringBuilder.append("World!");
+        String stringBuilderResult = stringBuilder.toString();
+        System.out.println("StringBuilder Result: " + stringBuilderResult);
+        
+        // Using StringBuffer to append strings
+        StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append("Hello");
+        stringBuffer.append(", ");
+        stringBuffer.append("World!");
+        String stringBufferResult = stringBuffer.toString();
+        System.out.println("StringBuffer Result: " + stringBufferResult);
+        
+        // Reverse a string without affecting word positions
+        String sentence = "This is a sample sentence";
+        String reversedSentence = reverseStringWithoutPosition(sentence);
+        System.out.println("Reversed Sentence: " + reversedSentence);
+    }
+    
+    // Method to reverse a string
+    public static String reverseString(String str) {
+        return new StringBuilder(str).reverse().toString();
+    }
+    
+    // Method to count the number of characters in a string
+    public static int countCharacters(String str) {
+        return str.length();
+    }
+    
+    // Method to reverse a string without affecting word positions
+    public static String reverseStringWithoutPosition(String str) {
+        String[] words = str.split("\\s+");
+        StringBuilder reversedSentence = new StringBuilder();
+        
+        for (int i = words.length - 1; i >= 0; i--) {
+            reversedSentence.append(words[i]).append(" ");
+        }
+        
+        return reversedSentence.toString().trim();
+    }
+}

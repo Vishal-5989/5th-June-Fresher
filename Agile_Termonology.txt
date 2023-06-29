@@ -1,0 +1,8 @@
+# What is Agile Methodology?
+An agile methodology is an iterative approach to software development. Each iteration of agile methodology takes a short time interval of 1 to 4 weeks. 
+The agile development process is aligned to deliver the changing business requirement. It distributes the software with faster and fewer changes.
+
+# Roles in Agile:
+ Scrum Master
+ Product Owner
+ Cross-functional team

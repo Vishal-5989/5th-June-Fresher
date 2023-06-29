@@ -1,0 +1,47 @@
+...............................Exceptional Hnadling ......................................
+#examples of Java code that demonstrate exception handling using try-catch blocks, multiple catch blocks, and nested try blocks:
+
+public class SimpleExceptionHandling {
+    public static void main(String[] args) {
+        try {
+            int result = 10 / 0; // This will throw an ArithmeticException
+        } catch (ArithmeticException e) {
+            System.out.println("Exception caught: " + e.getMessage());
+        }
+    }
+}
+---------------------------------------------------------------------------------
+public class MultipleCatchBlocks {
+    public static void main(String[] args) {
+        try {
+            String str = null;
+            System.out.println(str.length()); // This will throw a NullPointerException
+        } catch (ArithmeticException e) {
+            System.out.println("ArithmeticException caught: " + e.getMessage());
+        } catch (NullPointerException e) {
+            System.out.println("NullPointerException caught: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Generic Exception caught: " + e.getMessage());
+        }
+    }
+}
+---------------------------------------------------------------------------------
+public class NestedTryBlock {
+    public static void main(String[] args) {
+        try {
+            try {
+                int[] numbers = {1, 2, 3};
+                System.out.println(numbers[5]); // This will throw an ArrayIndexOutOfBoundsException
+            } catch (ArrayIndexOutOfBoundsException e) {
+                System.out.println("Inner catch block: " + e.getMessage());
+            }
+
+            int result = 10 / 0; // This will throw an ArithmeticException
+        } catch (ArithmeticException e) {
+            System.out.println("Outer catch block: " + e.getMessage());
+        }
+    }
+}
+
+
+
