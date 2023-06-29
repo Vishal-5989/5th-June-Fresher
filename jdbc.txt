@@ -1,0 +1,137 @@
+create connection jdbc
+
+
+package org.example;
+import java.sql.*;
+
+public class demo {
+public static void main(String[] args){
+    String url="jdbc:mysql://localhost:3306/test";
+    String user="root";
+    String password="shubham";
+    try {
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection connection=DriverManager.getConnection(url,user,password);
+        System.out.println("connection successfull");
+           //String query="update student set city='pune' where id=104";
+        // String query="insert into student (id,name,age,city)values(107,'mahesh',28,'fursungi')";
+          String query="DELETE FROM student WHERE name='ganesh'";
+       Statement statement=connection.createStatement();
+       int i=statement.executeUpdate(query);
+        System.out.println(i+"  rows Modifyed");
+        connection.close();
+    } catch (ClassNotFoundException e) {
+        throw new RuntimeException(e);
+    } catch (SQLException e) {
+        throw new RuntimeException(e);
+    }
+
+}
+}
+==================================================================================================================
+sql querry
+
+package org.example;
+import java.sql.*;
+public class getdata {
+
+
+    public static void main(String[] args) {
+        String url="jdbc:mysql://localhost:3306/test";
+        String user="root";
+        String password="shubham";
+        try {
+            Connection connection=DriverManager.getConnection(url,user,password);
+            Statement statement=connection.createStatement();
+
+           // String query="select * from student where name like'sh%'";
+            //String query="Select * from student order by id desc";
+            //String query="select * from student where city in (pune)  ";
+            //String query="select names from student where age>22";
+           // String query="Select * from student where age=(Select max(age)from student) ";
+            String query="select name,age from student group by name,age;";
+
+            ResultSet resultSet=statement.executeQuery(query);
+
+            System.out.println(resultSet);
+
+            while(resultSet.next()){
+              //int id = resultSet.getInt("id");
+              String name = resultSet.getString("name");
+                String age = resultSet.getString("age");
+               //System.out.println(id);
+                System.out.println(" Student Name is - "+name);
+               System.out.println(" Student age is - "+age);
+                System.out.println(" ");
+            }
+            connection.close();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+}
+====================================================================================================
+sql query using switch
+
+
+package org.example;
+import java.sql.*;
+import java.util.*;
+public class querry {
+    public static void main(String[] args){
+        Scanner scanner=new Scanner(System.in);
+        int choice;
+        String url="jdbc:mysql://localhost:3306/emp";
+        String user="root";
+        String password="shubham";
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection connection=DriverManager.getConnection(url,user,password);
+            System.out.println("connection successfull");
+            Statement statement=connection.createStatement();
+            do {
+                System.out.println("Enter your choice");
+                System.out.println("Press 1 to INSERT into the DB");
+                System.out.println("Press 2 to DELETE from DB");
+                System.out.println("Press 3 to Display into DB");
+                //System.out.println("Press 4 to VIEW ALL from DB");
+                //System.out.println("Press 5 to EXIT");
+
+                choice = scanner.nextInt();
+
+                switch (choice) {
+                    case 1:
+                        statement.executeUpdate("insert into emp1 values(01,'aaa',100),(02,'bbb',200),(03,'ccc',300),(04,'ddd',400),(05,'eee',500)");
+                        System.out.println("insert succesfully");
+                        break;
+                    case 2:
+                        statement.executeUpdate("delete from emp1 where id=01");
+                        System.out.println("delete succesfully");
+                        break;
+                    case 3:
+                        statement.executeUpdate("Update emp1 Set name='zzz' where id=4");
+                        System.out.println("update succesfully");
+                       break;
+
+
+                    case 4:
+                        ResultSet resultSet = statement.executeQuery("select * from emp1");
+                        while (resultSet.next()) {
+                            System.out.println(resultSet.getInt(1) + "\t\t" + resultSet.getString(2) + "\t\t" + resultSet.getInt(3));
+                        }
+                        break;
+
+
+                }
+            }while(choice!=5);
+
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+}

@@ -1,0 +1,155 @@
+csv file code(write in file)
+
+
+import com.opencsv.CSVWriter;
+
+import java.io.*;
+public class file1
+{
+    public static void main(String[]args)
+    {
+        try
+        {
+            FileWriter f=new FileWriter("C:\\Users\\NTS-ShubhamJawale\\IdeaProjects\\sss.csv");
+           CSVWriter csv=new CSVWriter(f);
+           String[] data={"Name","Dep","Empid","Contact"};
+           csv.writeNext(data);
+            String[] data1={"shubh","it","777","5555"};
+            csv.writeNext(data1);
+            String[] data2={"aaaa","com","888","6666"};
+            csv.writeNext(data2);
+            System.out.println("data enter successfully");
+
+            csv.close();
+//
+        }
+        catch (Exception e)
+        {
+            System.out.println(e);
+        }
+    }
+}
+-------------------------------------------------------------
+csv file (read)
+
+
+import com.opencsv.CSVReader;
+import com.opencsv.exceptions.CsvValidationException;
+
+import java.io.FileReader;
+import java.io.IOException;
+
+public class readf {
+    public static void main(String[] args){
+        try {
+            FileReader r = new FileReader("C:\\Users\\NTS-ShubhamJawale\\IdeaProjects\\sss.csv");
+            CSVReader csvr = new CSVReader(r);
+            String[] nextrec;
+            while((nextrec=csvr.readNext())!=null){
+                for(String cell:nextrec){
+                    System.out.printf("%-10s",cell);
+                }
+                System.out.println();
+            }
+
+
+        }
+        catch(IOException i){System.out.println(i);} catch (CsvValidationException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+}
+-----------------------------------------------------------------------------------------
+excel file create code
+
+
+import java.io.*;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Workbook;
+public class exelf2
+{
+    public static void main(String[] args)
+           // throws FileNotFoundException, IOException
+    {
+        try {
+//creating an instance of Workbook class
+            Workbook wb = new HSSFWorkbook();
+//creates an excel file at the specified location
+            OutputStream fileOut = new FileOutputStream("C:\\Users\\NTS-ShubhamJawale\\IdeaProjects\\sj.xlsx");
+            System.out.println("Excel File has been created successfully.");
+            wb.write(fileOut);
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
+}
+
+
+------------------------------------------------------------------------------------------
+excel file write code
+
+
+
+import  java.io.*;
+import  org.apache.poi.hssf.usermodel.HSSFSheet;
+import  org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import  org.apache.poi.hssf.usermodel.HSSFRow;
+public class fwrite
+{
+    public static void main(String[]args)
+    {
+
+        try
+        {
+
+            String filename = "C:\\Users\\NTS-ShubhamJawale\\IdeaProjects\\sj.xlsx";
+
+            HSSFWorkbook workbook = new HSSFWorkbook();
+
+            HSSFSheet sheet = workbook.createSheet("emp_details");
+
+            HSSFRow rowhead = sheet.createRow((short)0);
+// creat heading
+            rowhead.createCell(0).setCellValue("Sr.no");
+            rowhead.createCell(1).setCellValue("Name");
+            rowhead.createCell(2).setCellValue("id");
+            rowhead.createCell(3).setCellValue("name2");
+            rowhead.createCell(4).setCellValue("code");
+//creating the 1st row
+            HSSFRow row = sheet.createRow((short)1);
+//inserting data in the first row
+            row.createCell(0).setCellValue("1");
+            row.createCell(1).setCellValue("a");
+            row.createCell(2).setCellValue("11");
+            row.createCell(3).setCellValue("aa");
+            row.createCell(4).setCellValue("111");
+//creating the 2nd row
+            HSSFRow row1 = sheet.createRow((short)2);
+//inserting data in the second row
+            row1.createCell(0).setCellValue("2");
+            row1.createCell(1).setCellValue("br");
+            row1.createCell(2).setCellValue("22");
+            row1.createCell(3).setCellValue("bb");
+            row1.createCell(4).setCellValue("222");
+            FileOutputStream fileOut = new FileOutputStream(filename);
+            workbook.write(fileOut);
+//closing the Stream
+            fileOut.close();
+//closing the workbook
+            workbook.close();
+//prints the message on the console
+            System.out.println("Excel file has been generated successfully.");
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+}
+--------------------------------------------------------------------------------------
+
+
+
+
+
