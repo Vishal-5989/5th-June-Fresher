@@ -1,0 +1,20 @@
+package Programs;
+
+public class Pyramid {
+    public static void main(String[] args) {
+        int row=5;
+        int col=1;
+
+        for (int i=1;i<=row;i++) {
+            for (int k = row; k > i; k--) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= col; j++) {
+                System.out.print("* ");
+            }
+            col++;
+            System.out.println();
+
+        }
+    }
+}
