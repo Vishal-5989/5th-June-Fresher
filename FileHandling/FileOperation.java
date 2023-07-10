@@ -30,7 +30,7 @@ public class FileOperation
     {
         try {
 
-            File obj = new File("test1.txt");
+            File obj = new File("test.txt");
             obj.createNewFile();
 
             System.out.println("File Create Successfully");
@@ -43,7 +43,7 @@ public class FileOperation
     public  static  void delete()
     {
         File obj = new File("C:\\Users\\NTS-Jinendra Bafna\\Desktop\\jay.txt");
-        System.out.println(obj.delete()+" File Deleted Successfully");
+        System.out.println(obj.delete());
 
     }
 
@@ -52,28 +52,10 @@ public class FileOperation
 
     public static void main(String[] args)
     {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Press 1 for readFile");
-        System.out.println("Press 2 for writeFile");
-        System.out.println("Press 3 for deleteFile");
-        System.out.println("Press 4 for createFile");
-
-        int input =sc.nextInt();
-        switch (input){
-            case 1:
-                FileOperation.readFile();
-                break;
-            case 2:
-                FileOperation.writeFile();
-                break;
-            case 3:
-                FileOperation.delete();
-                break;
-            case 4:
-                FileOperation.createFile();
-                break;
-        }
-
+        //FileOperation.readFile();
+        //FileOperation.writeFile();
+        //FileOperation.createFile();
+        FileOperation.delete();
     }
 
 }
