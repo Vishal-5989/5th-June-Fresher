@@ -1,4 +1,4 @@
-package practisecode;
+
 
 public class AmstrongNumberRange 
 {
