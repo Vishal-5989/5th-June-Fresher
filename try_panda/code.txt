@@ -1,0 +1,64 @@
+# print(df.index)
+
+# print(df.iloc[:])
+
+# count = 0
+# for x in df.index:
+#     count += 1
+#     print(df.iloc[[x],:])
+#     break
+
+# print(count)
+
+    # print(df.loc[row_count])   
+    # break 
+
+# print(df.columns)
+
+located_row = df.loc[8]
+d_dictionary = located_row.to_dict()
+print(d_dictionary['"Grade"'])
+# print(d_dictionary)
+for key in d_dictionary:
+    if key in d_dictionary:
+        print(d_dictionary[key])
+# for key in d_dictionary:
+#     res = False
+#     print(key)
+#     if d_dictionary[key] == 'None':
+#         res = True
+#         print(key)
+#         break
+#     continue
+    
+#     for val in d_dictionary:
+#         continue
+#         # print(val)
+#         # break
+#         # entry_count =+ 1
+#         # print(d_dictionary[val])
+#         # break
+#     # break
+# print(str(res))
+# print(len(d_dictionary))
+# print(entry_count)
+    # print(key)
+#     errorData = []
+
+#     if key =='"Test1"':
+#         print(key,':',d_dictionary[key])
+
+# number_keys = 0
+# for i in range(col_count):
+#     located_row = df.loc[i]
+#     d_dictionary = located_row.to_dict()
+#     for key in d_dictionary:
+#         print(d_dictionary[key])
+
+#         number_keys += 1
+#         break
+        
+        # print(key)
+
+    # print(d_dictionary)
+# print(number_keys)
