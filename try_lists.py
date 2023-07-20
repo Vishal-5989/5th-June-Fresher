@@ -1,15 +1,15 @@
 list1 =['apple', 'banana', 'cherry', 'orange', 'kiwi', 'melon',  'dragon', 'litchi','banana','banana']
 
 
-# app_list = []
+app_list = []
 
-# for i in list1:
-#     if i not in app_list:
-#         app_list.append(i)
-#         print(i ,list1.count(i))
+for i in list1:
+    if i not in app_list:
+        app_list.append(i)
+        print(i ,list1.count(i))
 
-#     else:
-#         pass
+    else:
+        pass
 
 
 
