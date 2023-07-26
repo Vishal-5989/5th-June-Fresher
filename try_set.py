@@ -18,7 +18,8 @@ fruits = {'mango','pineapple','apple','orange','kiwi'}
 
 companies = {"google","apple","microsoft"}
 
-# z = fruits.difference(companies) #this will print the elements from fruits which are not present in companies in a new set.
+z = fruits.difference(companies) 
+print(z)#this will print the elements from fruits which are not present in companies in a new set.
 # print("----------------------------------------------------")
 
 # fruits.difference_update(companies) #this will remove the unwanted elements from fruits wrt companies.
