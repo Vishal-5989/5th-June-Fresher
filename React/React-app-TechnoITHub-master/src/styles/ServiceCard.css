@@ -1,0 +1,32 @@
+.card{
+
+    /* transition: all 0.2s ease;
+    cursor: pointer;
+    width: 400px;
+    height: 15px;
+    margin-left: 20px;
+    box-shadow: 0 5px 20px rgba(103, 1, 1, 0.5);
+    transition: 0.3s ease-in-out; */
+    /* height: 400px; */
+   
+    width: 350px;
+    margin: 30px 10px;
+    padding: 20px 15px;
+    margin-left: 40px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    transition: all 0.3s ease-in-out; 
+  }
+    
+
+.card:hover{
+
+    box-shadow: 2px 2px 2px 2px #737373;
+    transform: scale(1.1);
+}
+/* 
+.card-text{
+    visibility: hidden;
+}
+.card:hover .card-text{
+    visibility: visible;
+} */

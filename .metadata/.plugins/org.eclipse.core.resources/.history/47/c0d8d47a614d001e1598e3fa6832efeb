@@ -1,0 +1,5 @@
+package com.authorizationServer.entity;
+
+public class User {
+
+}

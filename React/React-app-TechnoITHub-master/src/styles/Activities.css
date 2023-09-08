@@ -1,0 +1,76 @@
+.carousel-activity{
+    /* width: 800px; */
+    /* height: 30px; */
+    /* margin: 30px 20px 30px 400px; */
+    margin-top: 30px;
+    /* display: block;
+    margin-left: auto;
+    margin-right: auto; */
+
+}
+.carousel-inner,.carousel-inner .carousel-item img{
+    height:500px;
+}
+
+.activity{
+    background-color:white;
+}
+#title{
+    color: rgb(20, 14, 1);
+    font-size: 45px;
+    font-family: Calibri;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.activitybody{
+    background-color: rgb(241, 241, 205);
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.activitybody:hover{
+    background-color: blanchedalmond;
+    box-shadow: 0px 5px 20px rgba(242, 7, 7, 0.2);
+    transform: scale(1.1);
+}
+
+.bodyimg{
+    width: 300px;
+}
+
+
+/* #carousel-head1{
+    color: rgb(16, 33, 33);
+    font-size: 25px;
+    background-color: whitesmoke;
+    opacity: 0.5;
+}
+#carousel-head2{
+    color: rgb(10, 212, 121);
+    font-size: 25px;
+    background-color: rgb(41, 39, 39);
+}
+
+#carousel-head3{
+    color: rgb(90, 151, 158);
+    background-color: white;
+    font-size: 25px;
+}
+#carousel-head4{
+    background-color: white;
+    font-size: 25px;
+}
+#carousel-head5{
+    color: rgb(155, 173, 180);
+    background-color: rgb(10, 10, 10);
+    font-size: 25px;
+}
+#carousel-head6{
+    color: #212529;
+    font-size: 25px;
+    background-color: #f8f9fa;
+    opacity: 0.5;
+} */

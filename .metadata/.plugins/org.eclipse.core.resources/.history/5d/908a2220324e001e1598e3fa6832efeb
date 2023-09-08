@@ -1,0 +1,12 @@
+package com.authorizationServer.repository;
+
+import org.springframework.stereotype.Repository;
+
+import com.authorizationServer.entity.User;
+
+@Repository
+public interface UserRepository {
+
+	User findByEmail(String email);
+
+}

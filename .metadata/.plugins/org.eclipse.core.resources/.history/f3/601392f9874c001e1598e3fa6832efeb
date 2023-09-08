@@ -1,0 +1,20 @@
+package com.springSecurity.service;
+
+import com.springSecurity.entity.User;
+import com.springSecurity.entity.VerificationToken;
+import com.springSecurity.model.UserModel;
+
+public interface UserService {
+
+	User registerUser(UserModel user);
+
+
+	String validateVerificationToken(String token);
+
+
+	void saveVerificationTokenForUser(String token, User user);
+
+
+	VerificationToken genrateNewVerificationToken(String oldToken);
+
+}

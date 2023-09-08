@@ -1,0 +1,5 @@
+package com.authorizationServer.repository;
+
+public interface UserRepository {
+
+}

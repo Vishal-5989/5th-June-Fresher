@@ -1,0 +1,12 @@
+package com.authorizationServer.service;
+
+import javax.transaction.Transactional;
+
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.stereotype.Service;
+
+@Service
+@Transactional
+public class CustomUserDetailsService implements UserDetailsService{
+
+}
